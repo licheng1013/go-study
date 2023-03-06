@@ -1,0 +1,21 @@
+# 外部配置文件！
+#ip: "192.168.32.251"
+addr: ":8999" #端口号
+mongoUrl: "mongodb://192.168.32.251:27017"
+mysqlUrl: "root:root@tcp(192.168.101.8:3306)/t_ldx?charset=utf8mb4&parseTime=True&loc=Local" #数据库链接
+redisConfig: #账号秘密要保持一致
+  user: ""
+  pass: "root"
+  list:
+    - "192.168.32.251:6379"
+#配置必须各系统路径符  Linux以 / 杆结尾, win \\
+filePath: "/home/lco/data/"
+#如果你的路径是 / 杆结尾那么请 + 上/
+excludePath:
+  - "/user/test"
+  - "/user/login"
+  - "/user/err"
+  - "/file/list"
+  - "/file/download"
+  - "/redis/**"
+  - "/favicon.ico" #排除ico文件
