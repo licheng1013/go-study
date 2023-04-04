@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+// 重写方法测试
 type Cat interface {
 	PrintInfo()
 }
