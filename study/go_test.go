@@ -1,8 +1,11 @@
 package study
 
 import (
+	"fmt"
 	"log"
+	"sync"
 	"testing"
+	"time"
 )
 
 // Go 多线程
@@ -22,4 +25,22 @@ func TestGo(t *testing.T) {
 			log.Println(v)
 		}
 	}
+}
+
+// 测试一组线程使用
+func TestGroupGO(t *testing.T) {
+	// sync.WaitGroup 用于需要等待一组任务完成的场景
+	// 如根据用户id,查询用户信息,查询用户订单.采用多线程效率更快
+	var v sync.WaitGroup
+	for i := 0; i < 3; i++ {
+		v.Add(1)
+		j := i
+		go func() {
+			time.Sleep(time.Duration(j) * time.Second)
+			log.Println("go", j)
+			v.Done()
+		}()
+	}
+	v.Wait()
+	fmt.Println("等待执行完毕")
 }
