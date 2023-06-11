@@ -1,10 +1,10 @@
-package structure
+package main
 
 import (
 	"testing"
 )
 
-func Test11(t *testing.T) {
+func Test02(t *testing.T) {
 	var link *OneLinkNode
 	for i := 0; i < 5; i++ {
 		if link == nil {
@@ -25,7 +25,7 @@ type OneLinkNode struct {
 	Next *OneLinkNode
 }
 
-func Test12(t *testing.T) {
+func Test022(t *testing.T) {
 	var link *TwoLinkNode
 	for i := 0; i < 5; i++ {
 		if link == nil {
